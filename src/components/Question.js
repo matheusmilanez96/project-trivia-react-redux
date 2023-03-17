@@ -1,29 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { getQuestions, saveToken } from '../redux/actions/gameActions';
+import Answers from './Answers';
 
 class Question extends Component {
   state = {
-    token: '',
+    actualQuestion: 0,
   };
 
   componentDidMount() {
     const { dispatch } = this.props;
     const token = localStorage.getItem('token');
-    this.setState({
-      token,
-    });
     dispatch(saveToken(token));
     dispatch(getQuestions());
   }
 
   render() {
-    const { questions } = this.props;
-    const { token } = this.state;
+    const { questions, responseCode } = this.props;
+    const { actualQuestion } = this.state;
+    const invalidTokenResponse = 3;
+
+    if (responseCode === invalidTokenResponse) return <Redirect to="/" />;
+
+    if (questions.length === 0) return <p>Loading...</p>;
+    // console.log(questions);
+    const {
+      category,
+      question,
+      correct_answer: correct,
+      incorrect_answers: incorrects,
+    } = questions[actualQuestion];
     return (
       <div>
-        { token }
+        <p data-testid="question-category">{ category }</p>
+        <div>
+          <p data-testid="question-text">{ question }</p>
+        </div>
+        <Answers answers={ { correct, incorrects } } />
       </div>
     );
   }
@@ -31,10 +46,18 @@ class Question extends Component {
 
 Question.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  questions: PropTypes.arrayOf(PropTypes.shape({
+    category: PropTypes.string,
+    question: PropTypes.string,
+    correct_answer: PropTypes.string,
+    incorrect_answers: PropTypes.arrayOf(PropTypes.string),
+  })).isRequired,
+  responseCode: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  questions: state.game.questions,
+const mapStateToProps = ({ game: { questions, responseCode } }) => ({
+  questions,
+  responseCode,
 });
 
 export default connect(mapStateToProps)(Question);
