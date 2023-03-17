@@ -7,6 +7,7 @@ class Login extends React.Component {
     this.state = { name: '', email: '', buttonDisabled: true };
     this.handleChange = this.handleChange.bind(this);
     this.formValidation = this.formValidation.bind(this);
+    this.settingsClick = this.settingsClick.bind(this);
   }
 
   handleChange = (event) => {
@@ -16,6 +17,11 @@ class Login extends React.Component {
     }, this.formValidation);
   };
 
+  settingsClick() {
+    const { history } = this.props;
+    history.push('/settings');
+  }
+
   formValidation = () => {
     const { name, email } = this.state;
     if (name && email) {
@@ -23,11 +29,6 @@ class Login extends React.Component {
         buttonDisabled: false,
       });
     }
-  };
-
-  settingsClick = () => {
-    const { history } = this.props;
-    history.push('/settings');
   };
 
   render() {
@@ -69,7 +70,7 @@ class Login extends React.Component {
         <button
           type="button"
           data-testid="btn-settings"
-          onClick={ () => this.settingsClick }
+          onClick={ this.settingsClick }
         >
           Configurações
         </button>
