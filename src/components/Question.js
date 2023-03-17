@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { saveToken } from '../redux/actions/gameActions';
+import { getQuestions, saveToken } from '../redux/actions/gameActions';
 
 class Question extends Component {
   state = {
@@ -15,9 +15,11 @@ class Question extends Component {
       token,
     });
     dispatch(saveToken(token));
+    dispatch(getQuestions());
   }
 
   render() {
+    const { questions } = this.props;
     const { token } = this.state;
     return (
       <div>
@@ -31,4 +33,8 @@ Question.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(Question);
+const mapStateToProps = (state) => ({
+  questions: state.game.questions,
+});
+
+export default connect(mapStateToProps)(Question);

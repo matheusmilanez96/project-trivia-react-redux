@@ -1,4 +1,4 @@
-import { SAVE_TOKEN } from '../actions/gameActions';
+import { SAVE_API_RESPONSE, SAVE_TOKEN } from '../actions/gameActions';
 
 const INITIAL_STATE = {
   responseCode: 0,
@@ -14,6 +14,14 @@ const gameReducer = (state = INITIAL_STATE, action) => {
       ...state,
       token: payload,
     };
+  case SAVE_API_RESPONSE: {
+    const { responseCode, results } = payload;
+    return {
+      ...state,
+      responseCode,
+      questions: results,
+    };
+  }
   default:
     return state;
   }
