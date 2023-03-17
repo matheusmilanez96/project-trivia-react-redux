@@ -10,7 +10,6 @@ class Answers extends Component {
         answer, correct: true,
       } : { answer, correct: false, index: index - 1 }
     ));
-    console.log();
 
     return (
       <div data-testid="answer-options">

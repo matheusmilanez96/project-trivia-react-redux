@@ -18,9 +18,9 @@ const saveAPIResponse = ({ results, response_code: responseCode }) => ({
 
 export const getToken = () => async (dispatch) => {
   dispatch(startFetching());
-  const token = await (await fetch('https://opentdb.com/api_token.php?command=request')).json();
-  localStorage.setItem('token', token.token);
-  dispatch(saveToken(token.token));
+  const { token } = await (await fetch('https://opentdb.com/api_token.php?command=request')).json();
+  localStorage.setItem('token', token);
+  dispatch(saveToken(token));
   dispatch(successRequest());
 };
 
