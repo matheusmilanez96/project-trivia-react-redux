@@ -4,11 +4,28 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = { name: '', email: '', buttonDisabled: true };
+    this.handleChange = this.handleChange.bind(this);
+    this.formValidation = this.formValidation.bind(this);
   }
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    }, this.formValidation);
+  };
+
+  formValidation = () => {
+    const { name, email } = this.state;
+    if (name && email) {
+      this.setState({
+        buttonDisabled: false,
+      });
+    }
+  };
 
   render() {
     const { name, email, buttonDisabled } = this.state;
-
     return (
       <div>
         <label htmlFor="name">
