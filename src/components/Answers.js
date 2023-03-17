@@ -30,7 +30,10 @@ class Answers extends Component {
 }
 
 Answers.propTypes = {
-  answers: PropTypes.objectOf(PropTypes.string).isRequired,
+  answers: PropTypes.objectOf(PropTypes.shape({
+    correct: PropTypes.string,
+    incorrects: PropTypes.arrayOf(PropTypes.string),
+  })).isRequired,
 };
 
 export default Answers;

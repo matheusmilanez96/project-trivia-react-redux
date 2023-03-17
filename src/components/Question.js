@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { getQuestions, saveToken } from '../redux/actions/gameActions';
+import { getQuestions } from '../redux/actions/gameActions';
 import Answers from './Answers';
 
 class Question extends Component {
@@ -12,8 +12,6 @@ class Question extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    const token = localStorage.getItem('token');
-    dispatch(saveToken(token));
     dispatch(getQuestions());
   }
 

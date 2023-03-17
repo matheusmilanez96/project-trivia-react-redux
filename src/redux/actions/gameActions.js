@@ -1,3 +1,5 @@
+import { startFetching, successRequest } from './loginActions';
+
 export const SAVE_TOKEN = 'SAVE_TOKEN';
 export const SAVE_API_RESPONSE = 'SAVE_API_RESPONSE';
 
@@ -13,6 +15,14 @@ const saveAPIResponse = ({ results, response_code: responseCode }) => ({
     responseCode,
   },
 });
+
+export const getToken = () => async (dispatch) => {
+  dispatch(startFetching());
+  const token = await (await fetch('https://opentdb.com/api_token.php?command=request')).json();
+  localStorage.setItem('token', token.token);
+  dispatch(saveToken(token.token));
+  dispatch(successRequest());
+};
 
 export const getQuestions = () => async (dispatch, getState) => {
   const { token } = getState().game;
