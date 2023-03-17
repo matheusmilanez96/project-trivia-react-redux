@@ -13,3 +13,8 @@ root.render(
     </BrowserRouter>
   </Provider>,
 );
+
+localStorage.setItem(
+  'token',
+  '84f967ef4b37629687c60bf11da4c83bd9478ac3b1fcc5fb79ca6d69240ca4c0',
+);
