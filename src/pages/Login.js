@@ -34,8 +34,8 @@ class Login extends React.Component {
             data-testid="input-player-name"
             id="input-player-name"
             placeholder="Name"
-            type="string"
-            name="input-player-name"
+            type="text"
+            name="name"
             value={ name }
             onChange={ this.handleChange }
           />
@@ -47,7 +47,7 @@ class Login extends React.Component {
             id="input-gravatar-email"
             placeholder="E-mail"
             type="email"
-            name="input-gravatar-email"
+            name="email"
             value={ email }
             onChange={ this.handleChange }
           />
