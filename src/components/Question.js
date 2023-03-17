@@ -23,7 +23,7 @@ class Question extends Component {
     if (responseCode === invalidTokenResponse) return <Redirect to="/" />;
 
     if (questions.length === 0) return <p>Loading...</p>;
-    // console.log(questions);
+
     const {
       category,
       question,
