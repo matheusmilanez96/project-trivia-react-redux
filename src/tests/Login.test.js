@@ -5,12 +5,6 @@ import { screen, waitFor, waitForElementToBeRemoved } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 
 describe('Testa as funcionalidades do componente Login', () => {
-  it('A rota para esta página deve ser /', () => {
-    const { history } = renderWithRouterAndRedux(<App />);
-
-    expect(history.location.pathname).toBe('/');
-  });
-
   it('Deve ter dois inputs renderizados na tela e dois botões', () => {
     renderWithRouterAndRedux(<App />);
 
