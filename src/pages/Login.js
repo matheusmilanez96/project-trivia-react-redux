@@ -25,11 +25,12 @@ class Login extends React.Component {
     history.push('/settings');
   }
 
-  playClick = () => {
+  playClick = async () => {
     const { dispatch, history: { push } } = this.props;
-    dispatch(getToken());
-    dispatch(savePersonalInfo(this.state));
-    setTimeout(() => push('/game'), '2000');
+    await dispatch(getToken());
+    await dispatch(savePersonalInfo(this.state));
+    push('/game');
+    // setTimeout(() => push('/game'), '2000');
   };
 
   formValidation = () => {
@@ -77,7 +78,7 @@ class Login extends React.Component {
           disabled={ buttonDisabled }
           onClick={ () => this.playClick() }
         >
-          Entrar
+          Play
         </button>
 
         <button
