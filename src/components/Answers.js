@@ -35,6 +35,7 @@ class Answers extends Component {
             ))
         }
       </div>
+
     );
   }
 }
