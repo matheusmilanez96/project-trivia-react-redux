@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getToken } from '../redux/actions/gameActions';
+import { savePersonalInfo } from '../redux/actions/loginActions';
 
 class Login extends React.Component {
   constructor() {
@@ -24,10 +25,12 @@ class Login extends React.Component {
     history.push('/settings');
   }
 
-  playClick = () => {
+  playClick = async () => {
     const { dispatch, history: { push } } = this.props;
-    dispatch(getToken());
-    setTimeout(() => push('/game'), '2000');
+    await dispatch(getToken());
+    await dispatch(savePersonalInfo(this.state));
+    push('/game');
+    // setTimeout(() => push('/game'), '2000');
   };
 
   formValidation = () => {
@@ -75,7 +78,7 @@ class Login extends React.Component {
           disabled={ buttonDisabled }
           onClick={ () => this.playClick() }
         >
-          Entrar
+          Play
         </button>
 
         <button
