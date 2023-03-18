@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getToken } from '../redux/actions/gameActions';
+import { savePersonalInfo } from '../redux/actions/loginActions';
 
 class Login extends React.Component {
   constructor() {
@@ -27,6 +28,7 @@ class Login extends React.Component {
   playClick = () => {
     const { dispatch, history: { push } } = this.props;
     dispatch(getToken());
+    dispatch(savePersonalInfo(this.state));
     setTimeout(() => push('/game'), '2000');
   };
 
