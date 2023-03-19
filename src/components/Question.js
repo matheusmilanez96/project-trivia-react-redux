@@ -47,7 +47,7 @@ class Question extends Component {
         </div>
         <Answers
           answers={ questions[actualQuestionIndex] }
-          remaning={ time }
+          remaining={ time }
           stopTimer={ () => this.timer.pause() }
         />
         <div>
