@@ -12,7 +12,6 @@ class Question extends Component {
   state = {
     actualQuestionIndex: 0,
     time: 30,
-    // actualQuestion: {},
   };
 
   timer = new Timer(() => {
