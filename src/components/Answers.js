@@ -6,35 +6,62 @@ import '../styles/Answers.css';
 class Answers extends Component {
   state = {
     showAnswers: false,
+    answersArray: [],
+    timerIsZero: false,
   };
 
-  render() {
+  componentDidMount() {
     const { answers } = this.props;
-    const { showAnswers } = this.state;
-    const allAnswers = [answers.correct, ...answers.incorrects].map((answer, index) => (
+    const allAnswers = [
+      answers.correct_answer,
+      ...answers.incorrect_answers,
+    ].map((answer, index) => (
       index === 0 ? {
         answer,
         correct: true,
         className: 'correct-answers',
       } : { answer, correct: false, index: index - 1, className: 'incorrect-answers' }
     ));
+    this.setState({
+      answersArray: shuffle(allAnswers),
+    });
+  }
 
+  componentDidUpdate() {
+    const { remaning } = this.props;
+    const { timerIsZero } = this.state;
+
+    if (remaning === 0 && !timerIsZero) {
+      this.setState({
+        timerIsZero: true,
+        showAnswers: true,
+      });
+    }
+  }
+
+  render() {
+    const { showAnswers, answersArray, timerIsZero } = this.state;
+    const { stopTimer } = this.props;
     return (
       <div data-testid="answer-options">
         {
-          shuffle(allAnswers)
-            .map(({ answer, correct, index: ansIndex, className }, index) => (
-              <button
-                onClick={ () => this.setState({ showAnswers: true }) }
-                className={ showAnswers ? className : '' }
-                key={ index }
-                data-testid={ correct ? 'correct-answer' : `wrong-answer-${ansIndex}` }
-              >
-                { answer }
-              </button>
-            ))
+          answersArray.map(({ answer, correct, index: ansIndex, className }, index) => (
+            <button
+              onClick={ () => {
+                this.setState({ showAnswers: true });
+                stopTimer();
+              } }
+              className={ showAnswers ? className : '' }
+              key={ index }
+              data-testid={ correct ? 'correct-answer' : `wrong-answer-${ansIndex}` }
+              disabled={ timerIsZero }
+            >
+              { answer }
+            </button>
+          ))
         }
       </div>
+
     );
   }
 }
@@ -44,6 +71,8 @@ Answers.propTypes = {
     correct: PropTypes.string,
     incorrects: PropTypes.arrayOf(PropTypes.string),
   })).isRequired,
+  remaning: PropTypes.number.isRequired,
+  stopTimer: PropTypes.func.isRequired,
 };
 
 export default Answers;
