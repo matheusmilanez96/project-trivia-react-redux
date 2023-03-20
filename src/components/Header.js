@@ -28,7 +28,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  email: state.login.gravatarEmail,
+  email: state.login.email,
   name: state.login.name,
 });
 
