@@ -71,6 +71,7 @@ class Answers extends Component {
       dispatch(increaseScore({
         remaining,
         difficulty: difficultyPoints[questionDifficulty],
+        assertions: 1,
       }));
     }
   };
