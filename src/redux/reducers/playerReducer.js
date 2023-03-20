@@ -15,8 +15,13 @@ const playerReducer = (state = INITIAL_STATE, action) => {
     const { difficulty, remaining } = payload;
     return {
       ...state,
+<<<<<<< HEAD
       score: state.score + scoreConst + (remaining * difficulty),
       assertions: state.assertions + 1,
+=======
+      assertions: state.assertions + 1,
+      score: state.score + scoreConst + (remaining * difficulty),
+>>>>>>> 2f1f9dcad9c1223532ed7bc534a2c0541fc3c229
     };
   }
 
