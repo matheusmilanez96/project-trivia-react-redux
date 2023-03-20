@@ -12,24 +12,11 @@ class Answers extends Component {
     timerIsZero: false,
     questionDifficulty: '',
     click: false,
+    question: '',
   };
 
   componentDidMount() {
-    const { answers } = this.props;
-    const allAnswers = [
-      answers.correct_answer,
-      ...answers.incorrect_answers,
-    ].map((answer, index) => (
-      index === 0 ? {
-        answer,
-        correct: true,
-        className: 'correct-answers',
-      } : { answer, correct: false, index: index - 1, className: 'incorrect-answers' }
-    ));
-    this.setState({
-      answersArray: shuffle(allAnswers),
-      questionDifficulty: answers.difficulty,
-    });
+    this.updateAnswers();
   }
 
   componentDidUpdate() {
@@ -42,7 +29,36 @@ class Answers extends Component {
         showAnswers: true,
       });
     }
+    this.updateAnswers();
   }
+
+  updateAnswers = () => {
+    const { answers } = this.props;
+    const { question } = this.state;
+
+    if (question !== answers.question) {
+      const allAnswers = [
+        answers.correct_answer,
+        ...answers.incorrect_answers,
+      ];
+      const answerWithInfo = allAnswers.map((answer, index) => (
+        index === 0 ? {
+          answer,
+          correct: true,
+          className: 'correct-answers',
+        } : { answer, correct: false, index: index - 1, className: 'incorrect-answers' }
+      ));
+
+      this.setState({
+        question: answers.question,
+        answersArray: shuffle(answerWithInfo),
+        questionDifficulty: answers.difficulty,
+        showAnswers: false,
+        timerIsZero: false,
+        click: false,
+      });
+    }
+  };
 
   handleAnswerClick = (correct) => {
     const { stopTimer, dispatch, remaining } = this.props;
@@ -61,6 +77,8 @@ class Answers extends Component {
 
   render() {
     const { showAnswers, answersArray, timerIsZero, click } = this.state;
+    const { onClickNext } = this.props;
+
     return (
       <div data-testid="answer-options">
         {
@@ -78,7 +96,7 @@ class Answers extends Component {
         }
         {
           click ? (
-            <button data-testid="btn-next">Next</button>
+            <button data-testid="btn-next" onClick={ onClickNext }>Next</button>
           ) : ''
         }
       </div>
@@ -95,6 +113,7 @@ Answers.propTypes = {
   remaining: PropTypes.number.isRequired,
   stopTimer: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
+  onClickNext: PropTypes.func.isRequired,
 };
 
 export default connect()(Answers);
