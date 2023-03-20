@@ -11,6 +11,7 @@ class Answers extends Component {
     answersArray: [],
     timerIsZero: false,
     questionDifficulty: '',
+    click: false,
   };
 
   componentDidMount() {
@@ -48,7 +49,7 @@ class Answers extends Component {
     const { questionDifficulty } = this.state;
     const difficultyPoints = { hard: 3, medium: 2, easy: 1 };
 
-    this.setState({ showAnswers: true });
+    this.setState({ showAnswers: true, click: true });
     stopTimer();
     if (correct) {
       dispatch(increaseScore({
@@ -59,7 +60,7 @@ class Answers extends Component {
   };
 
   render() {
-    const { showAnswers, answersArray, timerIsZero } = this.state;
+    const { showAnswers, answersArray, timerIsZero, click } = this.state;
     return (
       <div data-testid="answer-options">
         {
@@ -74,6 +75,11 @@ class Answers extends Component {
               { answer }
             </button>
           ))
+        }
+        {
+          click ? (
+            <button data-testid="btn-next">Next</button>
+          ) : ''
         }
       </div>
 
