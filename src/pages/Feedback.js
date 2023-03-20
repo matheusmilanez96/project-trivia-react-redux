@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 
 class Feedback extends Component {
+  constructor() {
+    super();
+    this.rankingClick = this.rankingClick.bind(this);
+  }
+
+  rankingClick() {
+    const { history } = this.props;
+    history.push('/ranking');
+  }
+
   render() {
     const { assertions, history } = this.props;
     const three = 3;
@@ -21,6 +31,13 @@ class Feedback extends Component {
         >
           Play Again
         </button>
+        <button
+          type="button"
+          data-testid="btn-ranking"
+          onClick={ this.rankingClick }
+        >
+          Ranking
+        </button>
       </div>
     );
   }
@@ -33,7 +50,9 @@ const mapStateToProps = (state) => ({
 
 Feedback.propTypes = {
   assertions: PropTypes.number.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 export default connect(mapStateToProps)(Feedback);
