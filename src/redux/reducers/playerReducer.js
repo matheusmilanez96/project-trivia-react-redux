@@ -1,4 +1,4 @@
-import { INCREASE_SCORE, ASSERTION_SCORE } from '../actions/playerActions';
+import { INCREASE_SCORE } from '../actions/playerActions';
 
 const INITIAL_STATE = {
   name: '',
