@@ -12,7 +12,7 @@ class Feedback extends Component {
         <Header />
         <span data-testid="feedback-text">
           {
-            assertions <= three ? <p>Could be better...</p> : <p>Well Done!</p>
+            assertions < three ? <p>Could be better...</p> : <p>Well Done!</p>
           }
         </span>
         {/* <button
