@@ -9,10 +9,10 @@ class Feedback extends Component {
     this.rankingClick = this.rankingClick.bind(this);
   }
 
-  rankingClick = () => {
+  rankingClick() {
     const { history } = this.props;
     history.push('/ranking');
-  };
+  }
 
   render() {
     return (
