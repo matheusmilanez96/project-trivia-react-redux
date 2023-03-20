@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Question from '../components/Question';
+import Score from '../components/Score';
 // import PropTypes from 'prop-types';
 
 class Game extends Component {
@@ -7,6 +8,7 @@ class Game extends Component {
     return (
       <div>
         <Question />
+        <Score />
       </div>
     );
   }

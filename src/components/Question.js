@@ -12,7 +12,6 @@ class Question extends Component {
   state = {
     actualQuestionIndex: 0,
     time: 30,
-    // actualQuestion: {},
   };
 
   timer = new Timer(() => {
@@ -48,7 +47,7 @@ class Question extends Component {
         </div>
         <Answers
           answers={ questions[actualQuestionIndex] }
-          remaning={ time }
+          remaining={ time }
           stopTimer={ () => this.timer.pause() }
         />
         <div>
