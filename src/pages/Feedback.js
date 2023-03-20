@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-// import Score from '../components/Score';
 
 class Feedback extends Component {
   render() {
     const { assertions } = this.props;
     const three = 3;
-    console.log(assertions);
     return (
       <div>
         <Header />

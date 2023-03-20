@@ -1,4 +1,4 @@
-import { INCREASE_SCORE } from '../actions/playerActions';
+import { INCREASE_SCORE, ASSERTION_SCORE } from '../actions/playerActions';
 
 const INITIAL_STATE = {
   name: '',
@@ -19,6 +19,7 @@ const playerReducer = (state = INITIAL_STATE, action) => {
       assertions: state.assertions + 1,
     };
   }
+
   default:
     return state;
   }
