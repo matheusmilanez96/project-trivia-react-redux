@@ -1,5 +1,5 @@
 import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
-import { screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Feedback from '../pages/Feedback';
 
