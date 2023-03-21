@@ -55,48 +55,55 @@ class Login extends React.Component {
           </video>
         </div>
         <div className="login-inputs-button">
-          <label htmlFor="name">
-            {/* Nome */}
-            <input
-              data-testid="input-player-name"
-              id="input-player-name"
-              placeholder="Nome"
-              type="text"
-              name="name"
-              value={ name }
-              onChange={ this.handleChange }
-            />
-          </label>
-          <label htmlFor="email">
-            {/* E-mail */}
-            <input
-              data-testid="input-gravatar-email"
-              id="input-gravatar-email"
-              placeholder="E-mail"
-              type="email"
-              name="email"
-              value={ email }
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            className="login-button-play"
-            type="submit"
-            data-testid="btn-play"
-            disabled={ buttonDisabled }
-            onClick={ () => this.playClick() }
-          >
-            Play
-          </button>
-
-          <button
-            className="login-button-settings"
-            type="button"
-            data-testid="btn-settings"
-            onClick={ this.settingsClick }
-          >
-            Configurações
-          </button>
+          <div>
+            <label htmlFor="name">
+              {/* Nome */}
+              <input
+                data-testid="input-player-name"
+                id="input-player-name"
+                placeholder="Nome"
+                type="text"
+                name="name"
+                value={ name }
+                onChange={ this.handleChange }
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="email">
+              {/* E-mail */}
+              <input
+                data-testid="input-gravatar-email"
+                id="input-gravatar-email"
+                placeholder="E-mail"
+                type="email"
+                name="email"
+                value={ email }
+                onChange={ this.handleChange }
+              />
+            </label>
+          </div>
+          <div>
+            <button
+              className="login-button-play"
+              type="submit"
+              data-testid="btn-play"
+              disabled={ buttonDisabled }
+              onClick={ () => this.playClick() }
+            >
+              Play
+            </button>
+          </div>
+          <div>
+            <button
+              className="login-button-settings"
+              type="button"
+              data-testid="btn-settings"
+              onClick={ this.settingsClick }
+            >
+              Configurações
+            </button>
+          </div>
         </div>
       </div>
 
