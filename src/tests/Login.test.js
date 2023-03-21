@@ -1,7 +1,6 @@
 import App from '../App';
-import Login from '../pages/Login';
 import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
-import { screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('Testa as funcionalidades do componente Login', () => {
