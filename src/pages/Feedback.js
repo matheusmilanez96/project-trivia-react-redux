@@ -7,6 +7,12 @@ class Feedback extends Component {
   constructor() {
     super();
     this.rankingClick = this.rankingClick.bind(this);
+    this.loginClick = this.loginClick.bind(this);
+  }
+
+  loginClick() {
+    const { history } = this.props;
+    history.push('/');
   }
 
   rankingClick() {
@@ -15,7 +21,7 @@ class Feedback extends Component {
   }
 
   render() {
-    const { assertions, history } = this.props;
+    const { assertions } = this.props;
     const three = 3;
     return (
       <div>
@@ -27,7 +33,7 @@ class Feedback extends Component {
         </span>
         <button
           data-testid="btn-play-again"
-          onClick={ () => history.push('/') }
+          onClick={ this.loginClick }
         >
           Play Again
         </button>
