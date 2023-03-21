@@ -1,7 +1,6 @@
 import App from '../App';
-import Login from '../pages/Login';
 import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
-import { screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('Testa as funcionalidades do componente Login', () => {
@@ -58,9 +57,6 @@ describe('Testa as funcionalidades do componente Login', () => {
     expect(buttonEnter).toBeVisible();
     userEvent.click(buttonEnter);
 
-    // const token = {
-    //   token: '2e0135e7199edfe6e77f506726cd8b2fed955d61e13399688c92330938f6e453',
-    // };
     const tokenResponse = {
       "response_code":0,
       "response_message":"Token Generated Successfully!",
@@ -71,10 +67,6 @@ describe('Testa as funcionalidades do componente Login', () => {
     global.fetch.mockResolvedValue({
       json: jest.fn().mockResolvedValue(tokenResponse.token),
     });
-
-    // expect(global.fetch).toHaveBeenCalledTimes(1);
-
-    // expect(global.fetch).toHaveBeenCalledWith('https://opentdb.com/api_token.php?command=request');
 
     await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
     

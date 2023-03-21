@@ -30,7 +30,6 @@ class Login extends React.Component {
     await dispatch(getToken());
     await dispatch(savePersonalInfo(this.state));
     push('/game');
-    // setTimeout(() => push('/game'), '2000');
   };
 
   formValidation = () => {
