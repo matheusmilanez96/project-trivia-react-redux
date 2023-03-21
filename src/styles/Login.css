@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fundo {
+  position: absolute;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto; 
+  z-index: -1000;
+  background: url('../images/imagem-de-fundo.mp4');
+}
+
+.login-body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.login-inputs-button {
+  display: flexbox;
+  padding: 5px;
+  background-color: rgba(184, 175, 175, 0.616);
+  height: 350px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 6%;
+  width: 50%;
+  box-shadow: 0px 10px 10px 8px rgba(82, 78, 78, 0.658);
+}
+
+#input-player-name {
+  border-color: palevioletred;
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 400px;
+  height: 10px;
+  margin-top: 50px;
+  box-shadow: 0px 2px 3px 2px rgba(252, 42, 147, 0.61);
+}
+
+#input-gravatar-email {
+  border-color: rgb(112, 192, 216);
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 400px;
+  height: 10px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 3px 2px rgba(42, 192, 252, 0.61);
+}
+
+.login-button-play {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 8px;
+  color: #FFFFFF;
+  background-color: rgb(99, 207, 140);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 210px;
+  margin-bottom: 30px;
+}
+
+.login-button-play:disabled {
+  background-color: rgb(188, 188, 188);
+}
+
+.login-button-play:hover {
+  cursor: pointer;
+}
+
+.login-button-settings {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 8px;
+  color: #FFFFFF;
+  background-color: rgb(218, 133, 100);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 210px;
+  margin-bottom: 30px;
+}
+
+.login-button-settings:hover {
+  cursor: pointer;
+}
+
