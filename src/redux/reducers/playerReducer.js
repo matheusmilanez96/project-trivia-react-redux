@@ -1,4 +1,4 @@
-import { INCREASE_SCORE } from '../actions/playerActions';
+import { INCREASE_SCORE, RESET_SCORE } from '../actions/playerActions';
 
 const INITIAL_STATE = {
   name: '',
@@ -19,7 +19,12 @@ const playerReducer = (state = INITIAL_STATE, action) => {
       assertions: state.assertions + 1,
     };
   }
-
+  case RESET_SCORE:
+    return {
+      ...state,
+      score: 0,
+      assertions: 0,
+    };
   default:
     return state;
   }
