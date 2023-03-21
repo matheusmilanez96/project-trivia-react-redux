@@ -1,0 +1,12 @@
+.div-score {
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+  width: 12%;
+  
+}
+
+.header-score {
+  font-size: 18px;
+  color: white;
+}
