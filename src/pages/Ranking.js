@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import md5 from 'crypto-js/md5';
+import { resetScore } from '../redux/actions/playerActions';
 
 class Ranking extends React.Component {
   constructor() {
@@ -39,8 +40,9 @@ class Ranking extends React.Component {
   }
 
   homeClick() {
-    const { history } = this.props;
+    const { history, dispatch } = this.props;
     history.push('/');
+    dispatch(resetScore());
   }
 
   render() {
@@ -81,6 +83,7 @@ Ranking.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
