@@ -1,0 +1,21 @@
+.div-header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(15, 14, 14, 0.808);
+  padding: 20px;
+  box-shadow: 0px 8px 8px 6px rgba(61, 39, 39, 0.658);
+}
+
+.header-img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.header-name {
+  font-size: 18px;
+  color: white;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-right: 5%;
+}
