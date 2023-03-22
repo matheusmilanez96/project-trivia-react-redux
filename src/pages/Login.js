@@ -5,6 +5,7 @@ import { getToken } from '../redux/actions/gameActions';
 import { savePersonalInfo } from '../redux/actions/loginActions';
 import '../styles/Login.css';
 import img from '../images/imagem-de-fundo.mp4';
+import imgTrivia from '../trivia.png';
 
 class Login extends React.Component {
   constructor() {
@@ -55,6 +56,9 @@ class Login extends React.Component {
           </video>
         </div>
         <div className="login-inputs-button">
+          <div className="div-logo-trivia">
+            <img src={ imgTrivia } alt="logo" className="logo-trivia" />
+          </div>
           <div>
             <label htmlFor="name">
               {/* Nome */}
