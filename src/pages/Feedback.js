@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
+import '../styles/Feedback.css';
 
 class Feedback extends Component {
   constructor() {
@@ -24,20 +25,24 @@ class Feedback extends Component {
     const { assertions } = this.props;
     const three = 3;
     return (
-      <div>
+      <div className="div-feedback">
         <Header />
-        <span data-testid="feedback-text">
-          {
-            assertions < three ? <p>Could be better...</p> : <p>Well Done!</p>
-          }
-        </span>
+        <div className="div-feedback-text">
+          <span data-testid="feedback-text" className="feedback-text">
+            {
+              assertions < three ? <p>Could be better... 😢</p> : <p>Well Done! 🎉🎆</p>
+            }
+          </span>
+        </div>
         <button
+          id="feedback-button-play"
           data-testid="btn-play-again"
           onClick={ this.loginClick }
         >
           Play Again
         </button>
         <button
+          id="feedback-button-ranking"
           type="button"
           data-testid="btn-ranking"
           onClick={ this.rankingClick }
