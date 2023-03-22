@@ -81,6 +81,9 @@ class Question extends Component {
             <span data-testid="question-text">{ actualQuestion.question }</span>
           </div>
         </div>
+        <div className="div-time">
+          { `⏳: ${time}` }
+        </div>
         <div>
           <Answers
             answers={ actualQuestion }
@@ -88,9 +91,6 @@ class Question extends Component {
             stopTimer={ this.timer.pause }
             onClickNext={ this.nextButtonClick }
           />
-        </div>
-        <div className="div-time">
-          { `⏳: ${time}` }
         </div>
       </div>
     );
