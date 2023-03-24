@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getToken } from '../redux/actions/gameActions';
 import { savePersonalInfo } from '../redux/actions/loginActions';
-// import '../styles/Login.css';
+import '../styles/Login.css';
 import img from '../images/imagem-de-fundo.mp4';
 import imgTrivia from '../trivia.png';
 
@@ -64,7 +64,7 @@ class Login extends React.Component {
               {/* Nome */}
               <input
                 data-testid="input-player-name"
-                id="input-player-name"
+                className="input-player-name"
                 placeholder="Nome"
                 type="text"
                 name="name"
@@ -78,7 +78,7 @@ class Login extends React.Component {
               {/* E-mail */}
               <input
                 data-testid="input-gravatar-email"
-                id="input-gravatar-email"
+                className="input-gravatar-email"
                 placeholder="E-mail"
                 type="email"
                 name="email"

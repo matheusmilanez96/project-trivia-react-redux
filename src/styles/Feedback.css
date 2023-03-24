@@ -1,37 +1,37 @@
-/* .div-feedback {
+.div-feedback {
   background-image: url('../images/question1.webp');
   background-repeat: repeat;
   background-size: 50%;
   height: 631px;
 }
 
-.div-feedback-text{
-  width: 500px;
-  margin-top: 10px;
-  margin-left: 30%;
-  margin-bottom: 10px;
+.div-feedback-text {
   background-color: black;
-  box-shadow: 0px 8px 8px 6px rgba(0, 0, 0, 0.658);
   border-radius: 5%;
+  box-shadow: 0 8px 8px 6px rgba(0, 0, 0, 0.658);
+  margin-bottom: 10px;
+  margin-left: 30%;
+  margin-top: 10px;
+  width: 500px;
 }
 
 .feedback-text {
-  text-align: center;
-  font-size: 40px;
   color: white;
+  font-size: 40px;
   padding: 5px;
+  text-align: center;
 }
 
-#feedback-button-play {
-  margin: 5px;
-  font-size: 20px;
+.feedback-button-play {
   background-color: rgb(99, 207, 140);
-  box-shadow: 0px 4px 4px 4px rgb(87, 133, 104);
+  box-shadow: 0 4px 4px 4px rgb(87, 133, 104);
+  font-size: 20px;
+  margin: 5px;
 }
 
-#feedback-button-ranking {
-  margin: 5px;
-  font-size: 20px;
+.feedback-button-ranking {
   background-color: rgb(218, 133, 100);
-  box-shadow: 0px 4px 4px 4px rgb(165, 112, 91);
-} */
+  box-shadow: 0 4px 4px 4px rgb(165, 112, 91);
+  font-size: 20px;
+  margin: 5px;
+}

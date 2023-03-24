@@ -1,9 +1,9 @@
-/* .div-header {
+.div-header {
+  background-color: rgba(0, 0, 0, 0.89);
+  box-shadow: 0 8px 8px 6px rgba(99, 70, 70, 0.658);
   display: flex;
   justify-content: flex-end;
-  background-color: rgba(0, 0, 0, 0.89);
   padding: 18px;
-  box-shadow: 0px 8px 8px 6px rgba(99, 70, 70, 0.658);
 }
 
 .header-img {
@@ -16,6 +16,6 @@
   color: white;
   font-size: 20px;
   margin-left: 5px;
-  margin-top: 10px;
   margin-right: 5%;
-} */
+  margin-top: 10px;
+}

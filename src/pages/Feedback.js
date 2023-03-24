@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-// import '../styles/Feedback.css';
+import '../styles/Feedback.css';
 
 class Feedback extends Component {
   constructor() {
@@ -37,14 +37,14 @@ class Feedback extends Component {
         <div data-testid="feedback-total-score">{score}</div>
         <div data-testid="feedback-total-question">{assertions}</div>
         <button
-          id="feedback-button-play"
+          className="feedback-button-play"
           data-testid="btn-play-again"
           onClick={ this.loginClick }
         >
           Play Again
         </button>
         <button
-          id="feedback-button-ranking"
+          className="feedback-button-ranking"
           type="button"
           data-testid="btn-ranking"
           onClick={ this.rankingClick }

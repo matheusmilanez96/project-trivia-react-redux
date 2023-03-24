@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import shuffle from '../helpers/shuffle';
-// import '../styles/Answers.css';
+import '../styles/Answers.css';
 import { increaseScore } from '../redux/actions/playerActions';
 
 class Answers extends Component {
@@ -11,7 +11,6 @@ class Answers extends Component {
     answersArray: [],
     timerIsZero: false,
     questionDifficulty: '',
-    click: false,
     question: '',
   };
 
@@ -55,7 +54,6 @@ class Answers extends Component {
         questionDifficulty: answers.difficulty,
         showAnswers: false,
         timerIsZero: false,
-        click: false,
       });
     }
   };
@@ -65,7 +63,7 @@ class Answers extends Component {
     const { questionDifficulty } = this.state;
     const difficultyPoints = { hard: 3, medium: 2, easy: 1 };
 
-    this.setState({ showAnswers: true, click: true });
+    this.setState({ showAnswers: true });
     stopTimer();
     if (correct) {
       dispatch(increaseScore({
@@ -76,7 +74,7 @@ class Answers extends Component {
   };
 
   render() {
-    const { showAnswers, answersArray, timerIsZero, click } = this.state;
+    const { showAnswers, answersArray, timerIsZero } = this.state;
     const { onClickNext } = this.props;
 
     return (
@@ -95,14 +93,13 @@ class Answers extends Component {
           ))
         }
         {
-          click ? (
+          showAnswers ? (
             <button
               className="button-next"
               data-testid="btn-next"
               onClick={ onClickNext }
             >
               Next
-
             </button>
           ) : ''
         }

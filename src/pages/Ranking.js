@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import md5 from 'crypto-js/md5';
 import { resetScore } from '../redux/actions/playerActions';
-// import '../styles/Ranking.css';
+import '../styles/Ranking.css';
 
 class Ranking extends React.Component {
   constructor() {
@@ -57,7 +57,7 @@ class Ranking extends React.Component {
           Ranking
         </h1>
         <button
-          id="ranking-button-home"
+          className="ranking-button-home"
           type="button"
           data-testid="btn-go-home"
           onClick={ this.homeClick }
@@ -67,19 +67,19 @@ class Ranking extends React.Component {
         { rankings.map((person, index) => (
           <div key={ index } className="div-ranking-map">
             <img
-              id="img-ranking"
+              className="img-ranking"
               src={ person.src }
               alt="foto de perfil"
             />
             <span
               data-testid={ `player-name-${index}` }
-              id="ranking-name"
+              className="ranking-name"
             >
               { person.name }
             </span>
             <span
               data-testid={ `player-score-${index}` }
-              id="ranking-score"
+              className="ranking-score"
             >
               { person.score }
               {' '}

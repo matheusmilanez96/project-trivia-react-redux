@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap') ;
 
 * {
   font-family: Poppins , sans-serif;
@@ -13,13 +13,11 @@
 }
 
 .fundo {
-  min-height: 100vh;
+  height: auto;
+  min-height: 100%;
   min-width: 100%;
   position: absolute;
-  min-width: 100%;
-  min-height: 100%;
   width: auto;
-  height: auto;
   z-index: -1000;
 }
 
@@ -30,10 +28,10 @@
 }
 
 .login-inputs-button {
-  padding: 5px;
   background-color: rgba(184, 175, 175, 0.616);
-  height: 350px;
   border-radius: 12px;
+  height: 350px;
+  padding: 5px;
   text-align: center;
   width: 50%;
 }
@@ -44,29 +42,29 @@
 }
 
 .logo-trivia {
-  margin-top: -40px;
-  display: flex;
   border-radius: 10px;
+  display: flex;
   height: 100px;
+  margin-top: -40px;
   width: 200px;
 }
 
-#input-player-name {
+.input-player-name {
   border-color: palevioletred;
   border-radius: 10px;
-  width: 50%;
+  box-shadow: 0 2px 3px 2px rgba(252, 42, 147, 0.61);
   height: 12px;
   margin-top: 30px;
-  box-shadow: 0px 2px 3px 2px rgba(252, 42, 147, 0.61);
+  width: 50%;
 }
 
-#input-gravatar-email {
+.input-gravatar-email {
   border-color: rgb(112, 192, 216);
   border-radius: 10px;
-  width: 50%;
+  box-shadow: 0 2px 3px 2px rgba(42, 192, 252, 0.61);
   height: 10px;
   margin-top: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(42, 192, 252, 0.61);
+  width: 50%;
 }
 
 .login-button-play {
@@ -74,7 +72,7 @@
   border: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: #fff;
+  color: white;
   font-size: 15px;
   height: 40px;
   width: 55%;
@@ -89,21 +87,19 @@
 }
 
 .login-button-settings {
-  font-size: 15px;
-  text-align: center;
-  margin-top: 3px;
-  padding: 8px;
-  color: #FFFFFF;
   background-color: rgb(218, 133, 100);
   border: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: #fff;
+  color: white;
   font-size: 15px;
   height: 40px;
+  margin-top: 3px;
+  padding: 8px;
+  text-align: center;
   width: 55%;
 }
 
 .login-button-settings:hover {
   cursor: pointer;
-} */
+}
