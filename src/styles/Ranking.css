@@ -1,52 +1,52 @@
-/* .div-ranking {
+.div-ranking {
   background-image: url('../images/question1.webp');
   background-repeat: repeat;
   background-size: 50%;
-  margin-top: -21px;
   height: 900px;
+  margin-top: -21px;
 }
 
 .h1-ranking {
+  background-color: rgba(0, 0, 0, 0.89);
+  box-shadow: 0 8px 8px 6px rgba(99, 70, 70, 0.658);
   color: white;
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.89);
   padding: 18px;
-  box-shadow: 0px 8px 8px 6px rgba(99, 70, 70, 0.658);
 }
 
-#ranking-button-home {
-  width: 30%;
-  font-size: 20px;
+.ranking-button-home {
   background-color: rgb(99, 207, 140);
-  box-shadow: 0px 4px 4px 4px rgb(87, 133, 104);
+  box-shadow: 0 4px 4px 4px rgb(87, 133, 104);
+  font-size: 20px;
   margin-bottom: 20px;
+  width: 30%;
 }
 
 .div-ranking-map {
+  background-color: black;
+  border-radius: 5%;
+  box-shadow: 0 8px 8px 6px rgba(0, 0, 0, 0.658);
   color: white;
   height: 100px;
-  width: 30%;
-  margin-top: 10px;
-  margin-left: 35%;
   margin-bottom: 20px;
-  background-color: black;
-  box-shadow: 0px 8px 8px 6px rgba(0, 0, 0, 0.658);
-  border-radius: 5%;
+  margin-left: 35%;
+  margin-top: 10px;
+  width: 30%;
 }
 
-#img-ranking {
-  margin-top: 15px;
+.img-ranking {
   border-radius: 50%;
   height: 50px;
+  margin-top: 15px;
   width: 50px;
 }
 
-#ranking-name {
+.ranking-name {
   font-size: 20px;
   margin: 20px;
 }
 
-#ranking-score {
+.ranking-score {
   font-size: 25px;
-} */
+}

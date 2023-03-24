@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { getQuestions } from '../redux/actions/gameActions';
 import Answers from './Answers';
 import Timer from '../helpers/timer';
-// import '../styles/Question.css';
+import '../styles/Question.css';
 import imgTrivia from '../trivia.png';
 
 const delay = 1000;
@@ -35,7 +35,6 @@ class Question extends Component {
     const { first } = this.state;
 
     if (questions.length !== 0 && first) {
-      console.log(questions);
       this.setState({
         actualQuestion: questions[0],
         first: false,
@@ -68,7 +67,7 @@ class Question extends Component {
     return (
       <div className="div-question">
         <div className="div-logo-trivia">
-          <img src={ imgTrivia } alt="logo" id="logo-trivia" />
+          <img src={ imgTrivia } alt="logo" className="logo-trivia" />
         </div>
         <div className="div-question-category-text">
           <span

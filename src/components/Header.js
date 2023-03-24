@@ -3,7 +3,7 @@ import md5 from 'crypto-js/md5';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Score from './Score';
-// import '../styles/Header.css';
+import '../styles/Header.css';
 
 class Header extends Component {
   render() {
