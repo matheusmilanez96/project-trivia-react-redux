@@ -7,10 +7,10 @@
 
 .fundo {
   position: absolute;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
-  width: auto; 
-  height: auto; 
+  width: auto;
+  height: auto;
   z-index: -1000;
   background: url('../images/imagem-de-fundo.mp4');
 }
