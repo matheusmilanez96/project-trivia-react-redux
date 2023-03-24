@@ -5,6 +5,8 @@ import { Redirect } from 'react-router-dom';
 import { getQuestions } from '../redux/actions/gameActions';
 import Answers from './Answers';
 import Timer from '../helpers/timer';
+// import '../styles/Question.css';
+import imgTrivia from '../trivia.png';
 
 const delay = 1000;
 
@@ -61,22 +63,34 @@ class Question extends Component {
     const invalidTokenResponse = 3;
 
     if (responseCode === invalidTokenResponse) return <Redirect to="/" />;
-    if (Object.keys(actualQuestion).length === 0) return <p>Loading...</p>;
+    if (Object.keys(actualQuestion).length === 0) return <span>Loading...</span>;
 
     return (
-      <div>
-        <p data-testid="question-category">{ actualQuestion.category }</p>
-        <div>
-          <p data-testid="question-text">{ actualQuestion.question }</p>
+      <div className="div-question">
+        <div className="div-logo-trivia">
+          <img src={ imgTrivia } alt="logo" id="logo-trivia" />
         </div>
-        <Answers
-          answers={ actualQuestion }
-          remaining={ time }
-          stopTimer={ this.timer.pause }
-          onClickNext={ this.nextButtonClick }
-        />
+        <div className="div-question-category-text">
+          <span
+            data-testid="question-category"
+            className="category"
+          >
+            { actualQuestion.category }
+          </span>
+          <div className="question-text">
+            <span data-testid="question-text">{ actualQuestion.question }</span>
+          </div>
+        </div>
+        <div className="div-time">
+          { `⏳: ${time}` }
+        </div>
         <div>
-          { `Timer: ${time}` }
+          <Answers
+            answers={ actualQuestion }
+            remaining={ time }
+            stopTimer={ this.timer.pause }
+            onClickNext={ this.nextButtonClick }
+          />
         </div>
       </div>
     );

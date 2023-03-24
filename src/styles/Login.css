@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
   font-family: Poppins , sans-serif;
@@ -16,6 +16,10 @@
   min-height: 100vh;
   min-width: 100%;
   position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   z-index: -1000;
 }
 
@@ -26,36 +30,43 @@
 }
 
 .login-inputs-button {
-  background-color: rgba(184, 175, 175, 0.616);
-  border-radius: 10px;
-  box-shadow: 0 10px 10px 8px rgba(82, 78, 78, 0.658);
-  display: flexbox;
-  height: 350px;
-  margin-top: 6%;
   padding: 5px;
+  background-color: rgba(184, 175, 175, 0.616);
+  height: 350px;
+  border-radius: 12px;
   text-align: center;
   width: 50%;
+}
+
+.div-logo-trivia {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-trivia {
+  margin-top: -40px;
+  display: flex;
+  border-radius: 10px;
+  height: 100px;
+  width: 200px;
 }
 
 #input-player-name {
   border-color: palevioletred;
   border-radius: 10px;
-  box-shadow: 0 2px 3px 2px rgba(252, 42, 147, 0.61);
-  height: 10px;
-  margin-top: 50px;
-  padding: 12px 16px;
-  width: 400px;
+  width: 50%;
+  height: 12px;
+  margin-top: 30px;
+  box-shadow: 0px 2px 3px 2px rgba(252, 42, 147, 0.61);
 }
 
 #input-gravatar-email {
   border-color: rgb(112, 192, 216);
   border-radius: 10px;
-  box-shadow: 0 2px 3px 2px rgba(42, 192, 252, 0.61);
+  width: 50%;
   height: 10px;
-  margin-bottom: 30px;
-  margin-top: 40px;
-  padding: 12px 16px;
-  width: 400px;
+  margin-top: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(42, 192, 252, 0.61);
 }
 
 .login-button-play {
@@ -66,11 +77,7 @@
   color: #fff;
   font-size: 15px;
   height: 40px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  padding: 8px;
-  text-align: center;
-  width: 210px;
+  width: 55%;
 }
 
 .login-button-play:disabled {
@@ -82,6 +89,11 @@
 }
 
 .login-button-settings {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 3px;
+  padding: 8px;
+  color: #FFFFFF;
   background-color: rgb(218, 133, 100);
   border: none;
   border-radius: 10px;
@@ -89,14 +101,9 @@
   color: #fff;
   font-size: 15px;
   height: 40px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  padding: 8px;
-  text-align: center;
-  width: 210px;
+  width: 55%;
 }
 
 .login-button-settings:hover {
   cursor: pointer;
-}
-
+} */

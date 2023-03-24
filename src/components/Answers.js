@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import shuffle from '../helpers/shuffle';
-import '../styles/Answers.css';
+// import '../styles/Answers.css';
 import { increaseScore } from '../redux/actions/playerActions';
 
 class Answers extends Component {
@@ -80,7 +80,7 @@ class Answers extends Component {
     const { onClickNext } = this.props;
 
     return (
-      <div data-testid="answer-options">
+      <div data-testid="answer-options" className="div-answers">
         {
           answersArray.map(({ answer, correct, index: ansIndex, className }, index) => (
             <button
@@ -96,7 +96,14 @@ class Answers extends Component {
         }
         {
           click ? (
-            <button data-testid="btn-next" onClick={ onClickNext }>Next</button>
+            <button
+              className="button-next"
+              data-testid="btn-next"
+              onClick={ onClickNext }
+            >
+              Next
+
+            </button>
           ) : ''
         }
       </div>
