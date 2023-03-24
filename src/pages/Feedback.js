@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import '../styles/Feedback.css';
+// import '../styles/Feedback.css';
 
 class Feedback extends Component {
   constructor() {

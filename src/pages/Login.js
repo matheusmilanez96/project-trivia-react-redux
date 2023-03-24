@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getToken } from '../redux/actions/gameActions';
 import { savePersonalInfo } from '../redux/actions/loginActions';
-import '../styles/Login.css';
+// import '../styles/Login.css';
 import img from '../images/imagem-de-fundo.mp4';
 import imgTrivia from '../trivia.png';
 

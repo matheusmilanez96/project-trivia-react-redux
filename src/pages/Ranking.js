@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import md5 from 'crypto-js/md5';
 import { resetScore } from '../redux/actions/playerActions';
-import '../styles/Ranking.css';
+// import '../styles/Ranking.css';
 
 class Ranking extends React.Component {
   constructor() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import '../styles/Score.css';
+// import '../styles/Score.css';
 
 class Score extends Component {
   render() {
@@ -12,9 +12,9 @@ class Score extends Component {
           className="header-score"
           data-testid="header-score"
         >
-          ⭐
+          {/* ⭐
           Pontos:
-          {' '}
+          {' '} */}
           { score }
         </span>
       </div>
