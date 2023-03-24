@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import shuffle from '../helpers/shuffle';
-// import '../styles/Answers.css';
+import '../styles/Answers.css';
 import { increaseScore } from '../redux/actions/playerActions';
 
 class Answers extends Component {
