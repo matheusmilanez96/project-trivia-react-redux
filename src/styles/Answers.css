@@ -22,7 +22,7 @@ button:hover {
   -webkit-transform: scale(1.5);
   transform: scale(1.1);
   cursor: pointer;
-}
+} */
 
 .correct-answers {
   border: 3px solid rgb(6, 240, 15);
@@ -30,4 +30,4 @@ button:hover {
 
 .incorrect-answers {
   border: 3px solid red;
-} */
+}
