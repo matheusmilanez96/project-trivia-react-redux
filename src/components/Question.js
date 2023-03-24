@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { getQuestions } from '../redux/actions/gameActions';
 import Answers from './Answers';
 import Timer from '../helpers/timer';
-import '../styles/Question.css';
+// import '../styles/Question.css';
 import imgTrivia from '../trivia.png';
 
 const delay = 1000;
